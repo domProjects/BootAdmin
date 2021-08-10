@@ -1,0 +1,32 @@
+{
+    "title": "Administrator Console",
+    "name": "bootstrap-administrator-console",
+    "version": "1.0.0-alpha1",
+    "description": "",
+    "keywords": [
+        "administration",
+        "bootstrap",
+        "bootstrap5",
+        "console",
+        "dashboard",
+        "template"
+    ],
+    "homepage": "https://github.com/domProjects/bootstrap-administrator-console",
+    "bugs": {
+        "url": "https://github.com/domProjects/bootstrap-administrator-console/issues",
+        "email": "feedback@startbootstrap.com"
+    },
+    "license": "MIT",
+    "author": "domProjects",
+    "contributors": [
+        "Emmanuel Campait (https://domprojects.com/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/domProjects/bootstrap-administrator-console.git"
+    },
+    "dependencies": {
+        "popper": "2.9.3",
+        "bootstrap": "5.1.0"
+    }
+}
