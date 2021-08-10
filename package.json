@@ -26,7 +26,7 @@
         "url": "https://github.com/domProjects/bootstrap-administrator-console.git"
     },
     "dependencies": {
-        "popper": "2.9.3",
+        "popper-core": "2.9.3",
         "bootstrap": "5.1.0"
     }
 }
