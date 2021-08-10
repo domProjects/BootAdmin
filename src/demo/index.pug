@@ -1,0 +1,19 @@
+include variables/versions.pug
+
+- var title = "Dashboard";
+
+doctype html
+html(lang='en')
+
+	head
+
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		title #{title} - Bootstrap Administrator Console
+
+		include content/style.pug
+
+	body
+
+		include content/script.pug
