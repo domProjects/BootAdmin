@@ -1,8 +1,8 @@
 {
-    "title": "Administrator Console",
-    "name": "bootstrap-administrator-console",
+    "title": "BootAdmin",
+    "name": "bootadmin",
     "version": "1.0.0-alpha1",
-    "description": "",
+    "description": "Free template based on Bootstrap 5",
     "keywords": [
         "administration",
         "bootstrap",
@@ -11,10 +11,10 @@
         "dashboard",
         "template"
     ],
-    "homepage": "https://github.com/domProjects/bootstrap-administrator-console",
+    "homepage": "https://github.com/domprojects/bootadmin",
     "bugs": {
-        "url": "https://github.com/domProjects/bootstrap-administrator-console/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https://github.com/domprojects/bootadmin/issues",
+        "email": "support@domprojects.com"
     },
     "license": "MIT",
     "author": "domProjects",
@@ -23,12 +23,15 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/domProjects/bootstrap-administrator-console.git"
+        "url": "https://github.com/domprojects/bootadmin.git"
     },
     "dependencies": {
-        "bootstrap": "^5.1.0",
         "@popperjs/core": "^2.9.3",
-        "jquery": "^3.6.0"
+        "bootstrap": "^5.1.0",
+        "jquery": "^3.6.0",
+        "metismenujs": "^1.3.0",
+        "moment": "^2.29.1",
+        "overlayscrollbars": "^1.13.1"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.6",
