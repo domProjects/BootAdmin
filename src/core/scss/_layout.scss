@@ -1,0 +1,231 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+// <header> element
+//
+#header {
+	display: flex;
+
+	height: $header-height;
+	max-height: $header-height;
+
+	user-select: none;
+
+	.btn {
+		min-width: $header-height;
+		height: $header-height;
+
+		&:active, &:focus, &:active:focus, &.active {
+			background-image: none;
+			box-shadow: none;
+			outline: 0;
+		}
+	}
+
+	svg {
+		width: 1em;
+		height: 1em;
+	}
+}
+
+#header-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: $header-title-width;
+	max-width: $header-title-width;
+	padding-right: $spacer;
+	padding-left: $spacer;
+
+	span {
+		display: block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+}
+
+#header-content {
+	//flex-grow: 1;
+	flex: 1 0;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+#header-action {
+	display: flex;
+}
+
+#header-info {
+	display: flex;
+}
+
+
+// <div> element
+//
+#content {
+	//flex-grow: 1;
+	flex: 1 0;
+
+	display: flex;
+
+	overflow: hidden;
+}
+
+
+// <nav> element
+//
+#nav {
+	width: 0;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.metismenu {
+		display: flex;
+		flex-direction: column;
+
+		a {
+			display: flex;
+			align-items: center;
+
+			padding: 0 $spacer;
+			height: $nav-a-height;
+
+			text-decoration: none;
+		}
+
+		ul {
+			a {
+				padding: 0 ($spacer * 1.75);
+			}
+
+			ul {
+				a {
+					padding: 0 ($spacer * 2.25);
+				}				
+			}
+		}
+
+		.mm-active > a {
+
+		}
+
+		.mm-active > ul ul a {
+
+		}
+	}
+}
+
+
+// <main> element
+//
+#main {
+	//flex-grow: 1;
+	flex: 1 0;
+
+	display: flex;
+	flex-direction: column;
+
+	overflow: hidden;
+}
+
+.breadcrumb {
+	display: flex;
+	align-items: center;
+
+	height: $main-breadcrumb-height;
+}
+
+
+// <section> element
+//
+#section {
+	display: flex;
+
+	padding-top: 0.75rem;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+// <footer> element
+//
+#footer {
+	display: flex;
+
+	height: $footer-height;
+	max-height: $footer-height;
+}
+
+#footer-version {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: $footer-version-width;
+	max-width: $footer-version-width;
+	padding-right: $spacer;
+	padding-left: $spacer;
+}
+
+#footer-content {
+	//flex-grow: 1;
+	flex: 1 0;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+#footer-copyright {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding-right: $spacer;
+	padding-left: $spacer;
+
+	user-select: none;
+}
+
+#footer-datetime {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+
+	padding-right: $spacer;
+	padding-left: $spacer;
+
+	user-select: none;
+}
+
+
+// responsive element
+//
+@include media-breakpoint-up(md) {
+	#nav {
+		width: $nav-width;
+	}
+}

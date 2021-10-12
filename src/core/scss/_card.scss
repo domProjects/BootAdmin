@@ -1,0 +1,157 @@
+.card-info-sm {
+	height: 90px;     // bof
+	min-height: 90px; // bof
+	max-height: 90px; // bof
+
+	.card-icon {
+		svg {
+			width: 45px;
+			height: 45px;
+		}
+	}
+}
+
+.card-info-lg {
+	height: 120px;     // bof
+	min-height: 120px; // bof
+	max-height: 120px; // bof
+
+	.card-icon {
+		svg {
+			width: 45px;
+			height: 45px;
+		}
+	}
+}
+
+.card-info {
+	flex-direction: row;
+
+	margin-bottom: $spacer;
+
+	.card-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 90px;     // bof
+		min-width: 90px; // bof
+		max-width: 90px; // bof
+
+		height: 100%;
+	}
+
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.card-title {
+		margin-bottom: 0;
+		font-size: $font-size-base * 1.8;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.card-text {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		line-height: 1.2;
+	}
+
+	.progress {
+		height: .25rem;
+	}
+}
+
+
+.card-tools {
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.card-header-title {
+		font-weight: 500;
+	}
+
+	.card-header-tools {
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.btn-tools {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		text-align: left; // Reset button style
+		border: 0;
+		@include border-radius(0);
+		overflow-anchor: none;
+		@include transition($accordion-transition);
+		box-shadow: none;
+
+		&:not(.collapsed) {
+			&::after {
+				transform: $accordion-icon-transform;
+			}
+		}
+
+		&::after {
+			flex-shrink: 0;
+			width: $accordion-icon-width;
+			height: $accordion-icon-width;
+			margin-left: auto;
+			content: "";
+			background-repeat: no-repeat;
+			background-size: $accordion-icon-width;
+			@include transition($accordion-icon-transition);
+		}
+
+		&:hover {
+			z-index: 2;
+		}
+
+		&:focus {
+			z-index: 3;
+			outline: 0;
+		}
+	}
+
+	.btn-collapse {
+		&:not(.collapsed) {
+			&::after {
+				background-image: escape-svg($collapse-icon-active);
+			}
+		}
+
+		&::after {
+			background-image: escape-svg($collapse-icon);
+		}
+	}
+
+	.btn-fullscreen {
+		&:not(.collapsed) {
+			&::after {
+				background-image: escape-svg($fullscreen-icon);
+			}
+		}
+
+		&.active {
+			&::after {
+				background-image: escape-svg($fullscreen-icon-active);
+			}
+		}
+	}
+}

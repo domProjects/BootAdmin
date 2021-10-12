@@ -1,22 +1,147 @@
 include variables/versions.pug
 
+include variables/mixins.pug
+
+- var brand = "BootAdmin";
 - var title = "Dashboard";
 
 doctype html
 html(lang='en')
 
 	head
-
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		meta(name='color-scheme', content='light dark')
 
-		title #{title} - Bootstrap Administrator Console
+		title #{title} - #{brand}
 
+		// stylesheet
 		include content/style.pug
-
 	body
 
-		button(type='button' id='theme-toggle' class='btn btn-primary') switch theme
+		// header
+		header#header
+			#header-title
+				span #{brand}
 
+			#header-content
+				#header-action
+					include content/header-action.pug
+
+				#header-info
+					include content/header-info.pug
+
+		// content
+		#content
+
+			// nav
+			nav#nav
+				include content/nav.pug
+
+			// main
+			main#main
+
+				// Breadcrumb
+				nav(aria-label='breadcrumb')
+					ol.breadcrumb
+						li.breadcrumb-item
+							a(href='index.html') Dashboard
+						li.breadcrumb-item
+							a(href='index.html') Bootstrap
+						li(class='breadcrumb-item active', aria-current='page') Accordion
+
+				// section
+				section#section
+					.container-fluid
+						.row
+							.col-sm-6.col-lg-4.col-xl-3
+								.card.card-info.card-info-sm
+									.card-icon.bg-danger.text-white
+										svg(xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16')
+											path(d='M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z')
+									.card-body
+										h5.card-title 41
+										p.card-text Unresolved errors
+							.col-sm-6.col-lg-4.col-xl-3
+								.card.card-info.card-info-sm
+									.card-icon.bg-primary.text-white
+										svg(xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16')
+											path(d='M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z')
+									.card-body
+										h5.card-title 1328
+										p.card-text Users per day
+							.col-sm-6.col-lg-4.col-xl-3
+								.card.card-info.card-info-sm
+									.card-icon.bg-danger.text-white
+										svg(xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16')
+											path(d='M4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM3 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z')
+											path(d='M16 11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V9.51c0-.418.105-.83.305-1.197l2.472-4.531A1.5 1.5 0 0 1 4.094 3h7.812a1.5 1.5 0 0 1 1.317.782l2.472 4.53c.2.368.305.78.305 1.198V11zM3.655 4.26 1.592 8.043C1.724 8.014 1.86 8 2 8h12c.14 0 .276.014.408.042L12.345 4.26a.5.5 0 0 0-.439-.26H4.094a.5.5 0 0 0-.44.26zM1 10v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z')
+									.card-body
+										h5.card-title 3
+										p.card-text Hard disk failed
+							.col-sm-6.col-lg-4.col-xl-3
+								.card.card-info.card-info-sm
+									.card-icon.bg-warning
+										svg(xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16')
+											path(d='M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z')
+											path(d='M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z')
+									.card-body
+										h5.card-title 26°
+										p.card-text Paris, France
+						.row
+							.col-sm-6.col-lg-4.col-xl-3
+								.card.card-info.card-info-lg
+									.card-icon.bg-warning
+										svg(xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16')
+											path(d='M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z')
+											path(d='M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z')
+									.card-body
+										h5.card-title 225
+										.progress
+											.progress-bar(role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100')
+										p.card-text 50% of incidents resolved
+						.row
+							.col-md-6
+								#fs-001.card.card-tools.isFullscreen
+									.card-header
+										.card-header-title Featured
+										.card-header-tools
+											.btn-group.btn-group-sm(role='group' aria-label='Tools')
+												button.btn.btn-sm.btn-tools.btn-fullscreen(type='button')
+												button.btn.btn-sm.btn-tools.btn-collapse(type='button' data-bs-toggle='collapse' data-bs-target='#aaaaa' aria-expanded='true' aria-controls='aaaaa')
+									#aaaaa.collapse.show
+										.card-body
+											h5.card-title Special title treatment
+											p.card-text With supporting text below as a natural lead-in to additional content.
+											a.btn.btn-primary(href='#') Go somewhere
+							.col-md-6
+								#fs-002.card.card-tools.isFullscreen
+									.card-header
+										.card-header-title Featured
+										.card-header-tools
+											.btn-group.btn-group-sm(role='group' aria-label='Tools')
+												button.btn.btn-sm.btn-tools.btn-fullscreen(type='button')
+												button.btn.btn-sm.btn-tools.btn-collapse.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#bbbbb' aria-expanded='false' aria-controls='bbbbb')
+									#bbbbb.collapse
+										.card-body
+											h5.card-title Special title treatment
+											p.card-text With supporting text below as a natural lead-in to additional content.
+											a.btn.btn-primary(href='#') Go somewhere
+		// footer
+		footer#footer
+			#footer-version
+				span v#{verBootAdmin}
+
+			#footer-content
+				#footer-copyright
+					span Copyright &copy; #{copyrightYear} BootAdmin by domProjects - All rights reserved
+
+				#footer-datetime
+					span 9:15:00 PM
+					span August 12, 2021
+
+		// offcanvas
+		include content/offcanvas.pug
+
+		// scripts
 		include content/script.pug

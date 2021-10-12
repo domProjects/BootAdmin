@@ -1,21 +1,119 @@
 :root {
 	color-scheme: light dark;
+
 }
 
-body {
 
-	background-color: #ccc;
-	color: #000;
+// <header> element
+//
+#header {
+	background-color: $header-bg;
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
+#header-title {
+	background-color: $header-title-bg;
+	color: $header-title-color;
+	font-size: 1.25rem;
+}
 
-		background-color: #000;
-		color: #fff;
-	}
+#header-content {
 
-	img {
-		filter: brightness(.8) contrast(1.2);
+}
+
+#header-action {
+
+}
+
+#header-info {
+
+}
+
+
+// <div> element
+//
+#content {
+
+}
+
+
+// <nav> element
+//
+#nav {
+	background-color: $nav-bg;
+
+	.metismenu {
+		a {
+			@include metismenu-hover-focus-disabled($nav-bg, $nav-bg);
+		}
+
+		ul {
+			a {
+				//@include metismenu-hover-focus-disabled($nav-a-submenu-bg, $nav-a-submenu-bg);
+			}
+
+			ul {
+				a {
+
+				}				
+			}
+		}
+
+		.mm-active > a {
+			@include metismenu-active($nav-bg, $nav-bg);
+		}
+
+		.mm-active > ul ul a {
+			//@include metismenu-active($nav-a-submenu-bg, $nav-a-submenu-bg);
+		}
 	}
+}
+
+
+// <main> element
+//
+#main {
+	background-color: $main-bg;
+}
+
+.breadcrumb {
+	background-color: $main-breadcrumb-bg;
+}
+
+
+// <section> element
+//
+#section {
+
+}
+
+
+// <footer> element
+//
+#footer {
+	background-color: $footer-bg;
+}
+
+#footer-version {
+	background-color: $footer-version-bg;
+	color: $footer-version-color;
+}
+
+#footer-content {
+	font-size: .825rem;
+}
+
+#footer-copyright {
+	color: $footer-copyright-color;
+}
+
+#footer-datetime {
+	color: $footer-datetime-color;
+}
+
+
+// Bootstrap Icons
+//
+.bi {
+	display: inline-block;
+	vertical-align: -.125em;
 }

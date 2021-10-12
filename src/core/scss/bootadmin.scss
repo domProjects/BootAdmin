@@ -1,0 +1,85 @@
+// Bootstrap >> Configuration
+@import "../../dependencies/bootstrap/scss/functions";
+
+
+// BootAdmin >> Default variable overrides Bootstrap
+
+// Options
+$enable-rounded:              false !default;
+$enable-deprecation-messages: false !default;
+
+// Breadcrumbs
+$breadcrumb-padding-x:     1rem !default;
+$breadcrumb-margin-bottom: 0 !default;
+
+
+// Bootstrap >> Configuration
+@import "../../dependencies/bootstrap/scss/variables";
+
+
+// BootAdmin >> Override color
+$custom-colors: (
+  "header": $purple-500
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// Bootstrap >> Configuration
+@import "../../dependencies/bootstrap/scss/mixins";
+@import "../../dependencies/bootstrap/scss/utilities";
+
+
+// Bootstrap >> Layout & components
+@import "../../dependencies/bootstrap/scss/root";
+@import "../../dependencies/bootstrap/scss/reboot";
+@import "../../dependencies/bootstrap/scss/type";
+@import "../../dependencies/bootstrap/scss/images";
+@import "../../dependencies/bootstrap/scss/containers";
+@import "../../dependencies/bootstrap/scss/grid";
+@import "../../dependencies/bootstrap/scss/tables";
+@import "../../dependencies/bootstrap/scss/forms";
+@import "../../dependencies/bootstrap/scss/buttons";
+@import "../../dependencies/bootstrap/scss/transitions";
+@import "../../dependencies/bootstrap/scss/dropdown";
+@import "../../dependencies/bootstrap/scss/button-group";
+@import "../../dependencies/bootstrap/scss/nav";
+//@import "../../dependencies/bootstrap/scss/navbar";
+@import "../../dependencies/bootstrap/scss/card";
+@import "../../dependencies/bootstrap/scss/accordion";
+@import "../../dependencies/bootstrap/scss/breadcrumb";
+@import "../../dependencies/bootstrap/scss/pagination";
+@import "../../dependencies/bootstrap/scss/badge";
+@import "../../dependencies/bootstrap/scss/alert";
+@import "../../dependencies/bootstrap/scss/progress";
+@import "../../dependencies/bootstrap/scss/list-group";
+@import "../../dependencies/bootstrap/scss/close";
+@import "../../dependencies/bootstrap/scss/toasts";
+@import "../../dependencies/bootstrap/scss/modal";
+@import "../../dependencies/bootstrap/scss/tooltip";
+@import "../../dependencies/bootstrap/scss/popover";
+//@import "../../dependencies/bootstrap/scss/carousel";
+@import "../../dependencies/bootstrap/scss/spinners";
+@import "../../dependencies/bootstrap/scss/offcanvas";
+@import "../../dependencies/bootstrap/scss/placeholders";
+
+
+// Bootstrap >> Helpers
+@import "../../dependencies/bootstrap/scss/helpers";
+
+
+// Bootstrap >> Utilities
+@import "../../dependencies/bootstrap/scss/utilities/api";
+
+
+// MetiMenuJS
+@import "../../dependencies/metismenu/scss/metismenu";
+
+
+// BootAdmin
+@import "variables";
+@import "mixins/link";
+@import "layout";
+@import "card";
+@import "themes/layout";
